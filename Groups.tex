@@ -1,0 +1,110 @@
+\documentclass{report}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{amssymb}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\title{\fontsize{40}{48} \selectfont \textbf{Mathematical Notes \\  2018}}
+\author{\textbf{L. L.H. Lau}}
+\date{}
+
+
+\begin{document}
+\maketitle
+\chapter*{Groups}
+\vspace{10.0mm}
+\section*{Group Axioms}
+\large{ A group G is a set G with a binary operation denoted by $\bullet$  which satisfies the following axioms:\\ 
+\begin{enumerate}
+	\item \textbf{Identity}\\
+		\linebreak
+		$\forall$ a $\in$ G, $\exists$ e $\in$ G, s.t. e $\bullet$ a = a $\bullet$ e = a   
+	\item \textbf{Inverse}\\
+		\linebreak
+		 $\forall$ a $\in$ G, $\exists$ $a^{-1}$ $\in$ G, s.t. $a^{-1}$ $ \bullet$ a = a $\bullet$ $a^{-1}$ = e
+	\item \textbf{Associativity}\\
+		\linebreak
+		$\forall$ a, b, c $\in$ G, a $\bullet$ (b $\bullet$ c) = (a $\bullet$ b) $\bullet$ c
+	\item \textbf{Closure}\\
+		\linebreak
+		$\forall$ a, b $\in$ G, (a $\bullet$ b) $\in$ G	
+\end{enumerate}
+
+
+}
+
+\section*{Order}
+\large{
+	The order of a group G is denoted $\|$ G $\|$ and gives the number of elements in G. 
+\\	The order of an element g $\in$ G, denoted by n, is the smallest integer n such that $g^{n}$ = e.
+	It is trivial to see that ord(e) = 1 and if an element t $\in$ G is self inverse, ord(t) = 2.
+
+\subsection*{Proof that the order of g \& $g^{-1}$ are the same}
+	Let $n_1$ be s.t. $g^{n_1}$ = e and $n_1$ is the smallest such integer.
+	\begin{alignat*}{2}
+		&(g^{-1}g) &&= e \\
+		\implies &(g^{-1}g)^{n_1} &&= e^{n_1} = e\\
+		\implies &(g^{-1})^{n_1}g^{n_1} &&= e\\ 
+		\implies &(g^{-1})^{n_1} &&= e
+	\end{alignat*}
+	Here $n_1$ is a multiple of the smallest such integer for $g^{-1}$. Similarly we can define the smallest integer $n_2$ 
+	which satisfies $(g^{-1})^{n_2} = e$ . By symmetry we get $n_1$ and $n_2$ being multiples of each other. $\therefore n_1 = n_{2}$
+	\newpage
+
+\subsection*{Exercises \\}
+	\begin{enumerate}
+	\item Proof of the uniqueness of the identity and the inverse.\\
+	\item Prove that  $\forall$ a, b $\in G$ $ord(ba) = ord(ab)$.
+	\end{enumerate}
+
+}
+
+\section*{Types of Groups}
+\large{
+	\subsection*{Abelian Groups}
+		A group G is abelian if it follows the group axioms and also has a commutativity axiom. Where $\forall$ a, b $\in G$ $a \bullet b = b \bullet a$ .  
+	\subsection*{Cyclic Group}
+		For a cyclic group G of order n, all emements of the group can be generated from one element of the group, e.g. X.
+		\begin{equation*}
+			G = \{I, X, X^2, X^3, ... , X^{n-1}\}
+		\end{equation*}
+		A cyclic group is abelian and all elements of G, apart from I have order n, the same as the ord(G) - the number of elements in group G.
+	\section*{Subgroup}
+		A group H is a subgroup of G, denoted by $H \leq G$, \textbf{iff} the set H is a subset of the set G, denoted by $H \subseteq G$, and follows the group axioms.
+		This can be summarised by the following, where the group H is a non empty set with a binary operator $\bullet$ : 
+		\begin{equation*}
+			\forall a, b \in H, (ab^{-1})\in H	
+		\end{equation*}
+		The logic follows as such:
+		\begin{alignat*}{2}
+			& a \in H \\
+			&aa^{-1}\in H &&\implies e \in H \text{ (By substitution of b for a- identity axiom)} \\
+			&ea^{-1}\in H &&\implies a^{-1} \in H \text{(Inverse Axiom)}\\ 
+			&b \in H &&\implies b^{-1} \in H \therefore a(b^{-1})^{-1} \in H \implies ab \in H \text{(Closure)}
+		\end{alignat*}
+}
+
+\chapter*{List of Common DEs} 
+\vspace{10.0mm}
+\section*{First Order ODEs}
+\large{
+\subsection*{\textbf{Separable:}}
+	 $\frac{dy}{dx} = f(x)g(y)$ \\ \\ If you can't do this, just give up.
+
+\subsection*{\textbf{Exact:}} $A(x,y)dx + B(x,y)dy = 0$ and $\frac{\partial A}{\partial y} = \frac{\partial B}{\partial x}$ \\ \\This follows from the symmetry of mixed partial derivatives.
+\\ To find the function U which satisfies $\frac{\partial U}{\partial x} = A$ and $\frac{\partial U}{\partial y} = B$ we can take the union of the generalised functions solved by integrating. Remember due to the partial derivatives we get some functions of x or y instead of constants of integration.
+
+\subsection*{\textbf{Inexact:}} $A(x,y)dx + B(x,y)dy = 0$ and $\frac{\partial A}{\partial y} \neq \frac{\partial B}{\partial x}$
+
+
+
+
+
+
+}
+
+\end{document}
