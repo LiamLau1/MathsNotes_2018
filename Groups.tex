@@ -92,19 +92,43 @@
 \vspace{10.0mm}
 \section*{First Order ODEs}
 \large{
-\subsection*{\textbf{Separable:}}
-	 $\frac{dy}{dx} = f(x)g(y)$ \\ \\ If you can't do this, just give up.
+	\subsection*{\textbf{Separable:}}
+	 	$\frac{dy}{dx} = f(x)g(y)$ \\ \\ If you can't do this, just give up.
 
-\subsection*{\textbf{Exact:}} $A(x,y)dx + B(x,y)dy = 0$ and $\frac{\partial A}{\partial y} = \frac{\partial B}{\partial x}$ \\ \\This follows from the symmetry of mixed partial derivatives.
+	\subsection*{\textbf{Exact:}} $A(x,y)dx + B(x,y)dy = 0$ and $\frac{\partial A}{\partial y} = \frac{\partial B}{\partial x}$ \\ \\This follows from the symmetry of mixed partial derivatives.
 \\ To find the function U which satisfies $\frac{\partial U}{\partial x} = A$ and $\frac{\partial U}{\partial y} = B$ we can take the union of the generalised functions solved by integrating. Remember due to the partial derivatives we get some functions of x or y instead of constants of integration.
 
-\subsection*{\textbf{Inexact:}} $A(x,y)dx + B(x,y)dy = 0$ and $\frac{\partial A}{\partial y} \neq \frac{\partial B}{\partial x}$
-
-
-
-
-
+	\subsection*{\textbf{Inexact:}} $A(x,y)dx + B(x,y)dy = 0$ and $\frac{\partial A}{\partial y} \neq \frac{\partial B}{\partial x}$
 
 }
+\chapter*{Integral Transforms}
+\vspace{10.0mm}
+\section*{Brief Recap on Fourier Series}
+\large{
+	For a function $f(x)$ to be represented by a Fourier Series, it must satisfy the Dirchlet conditions:
+	\begin{enumerate}
+			\item The function must be periodic.
+			\item It must be single valued and continuous, except possibly at a finite number of finite discontinuities.
+			\item It must have a finite number of minima and maxima within one period, unlike $sin(1/x)$
+			\item The integral over one period of $|f(x)|$ must converge.
+	\end{enumerate}
+
+	We can represent a function $f(x)$ as such
+	\begin{equation*}
+		f(x) = \frac{a_{0}}{2} + \sum_{n = 1}^{\infty}a_{n}cos(\frac{n\pi x}{L}) + b_{n}sin(\frac{n\pi x}{L})
+	\end{equation*}
+
+}
+\section*{Fourier Transform and the Dirac Delta Function}
+\large{
+	The FT takes the time period T to the limit of infinity, so that $\omega$ becomes a continuous variable $\omega = \frac{2\pi}{T}$ and $\Delta\omega$ becomes vanishingly small. Hence the infinite sum for the complex Fourier Series becomes an integral. Look at Mathematical Notes 2018 for the "derivation".\\
+	We define the forward and inverse transforms as such:
+	\begin{alignat*}{2}
+		& \hat{f}(\omega) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt \qquad \text{(forward)}\\
+		& f(t) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega t}d\omega \qquad \text{(inverse)}
+	\end{alignat*}
+	The forward transform takes the function f from time space to frequency space, and the inverse does the reverse. The FT exists provided that the integral of $|f(x)|$ from $-\infty$ to $\infty$ and that any discontinuities in f(x) are finite.
+}
+
 
 \end{document}
